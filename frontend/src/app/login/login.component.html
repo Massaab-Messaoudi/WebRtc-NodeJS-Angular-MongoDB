@@ -1,0 +1,27 @@
+
+<form [formGroup]="loginForm">
+    <div class="imgcontainer">
+      <img src="https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1786166.jpg" alt="Avatar" class="avatar">
+    </div>
+<div class="container">
+    <label for="uname"><b>Username</b></label>
+    <input type="text" formControlName="username" placeholder="Username">
+    <label for="psw"><b>Password</b></label>                
+    <input type="password" formControlName="password" placeholder="Password">            
+    <div>
+    <button class="form-btn" (click)="login()">Sign In</button>
+    </div>
+    <div class="container" style="background-color:#f1f1f1">
+        <button type="button" class="cancelbtn">Cancel</button>
+        <span class="psw">Forgot <a href="#">password?</a></span>
+    </div>
+    </div>
+    </form>
+    <div>
+    <div style="width: 290px; padding: 20px;">
+    <button (click)="movetoregister()">Register</button>
+    </div>
+    
+
+
+ 

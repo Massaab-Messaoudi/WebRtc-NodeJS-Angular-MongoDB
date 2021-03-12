@@ -1,0 +1,51 @@
+
+        <form style="width:100%;" [formGroup]="myForm">
+            <div class="imgcontainer">
+                <img src="https://png.pngtree.com/png-vector/20191003/ourmid/pngtree-user-login-or-authenticate-icon-on-gray-background-flat-icon-ve-png-image_1786166.jpg" alt="Avatar" class="avatar">
+              </div>
+          <div class="container">
+            <div>
+                <mat-form-field style="width:100%;">
+                    <label for="email"><b>Email</b></label>
+                    <input type="text" formControlName="email" matInput id="email">
+                </mat-form-field>                
+                <span *ngIf="isValid('email')">Entered email is invalid</span>
+            </div>
+            <div>
+                <mat-form-field style="width:100%;">
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" formControlName="username" matInput id="user">
+                </mat-form-field>
+                <span *ngIf="isValid('username')">Username is required</span>
+            </div>
+            <div>
+                <mat-form-field style="width:100%;">
+                    <label for="pw"><b>Passwrod</b></label>
+                    <input type="password" formControlName="password" matInput id="pass">
+                </mat-form-field>
+                <span *ngIf="isValid('password')">Password is a mandatory field</span>
+            </div>
+            <div>
+                <mat-form-field style="width:100%;">
+                    <label for="rpw"><b>Re-enter Password</b></label>
+                    <input type="password" formControlName="cnfpass" matInput id="cnfpass">
+                </mat-form-field>
+                <span *ngIf="isValid('cnfpass')">Password and confirm password should match</span>
+            </div>
+            <div style="margin-top:20px;">
+                <button class="form-btn" (click)="register()">Register</button>
+            </div>
+
+
+            <div style="text-align: center;">                
+                {{successMessage}}
+            </div>
+          </div>   
+        </form>
+    
+
+    <div>
+        <div style="width: 290px; padding: 20px;">
+            <button class="form-btn-hollow" (click)="movetologin()">Login</button>
+        </div>
+    </div>

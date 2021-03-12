@@ -1,0 +1,48 @@
+<div class="main">   
+  <div class="main-left">
+      <h2>Welcome {{username}}</h2>
+      <div class="main-videos">
+         <div class="video-grid">  
+         <div *ngFor="let video of videos">
+         <span *ngIf="video.userId !== currentUserId; else currentUserVideoLabel">{{ video.userId }}</span>
+         <ng-template #currentUserVideoLabel>
+           <span>You</span>
+         </ng-template>
+      <video
+        [srcObject]="video.srcObject"
+        (loadedmetadata)="onLoadedMetadata($event)"
+        [muted]="video.muted"
+      >
+      </video>
+    </div>
+  </div>
+</div>
+<div class="main-controls">
+    <div class="main-controls-block">
+        <div class="main-controls-button mic">
+            <i class="fas fa-microphone"></i>
+            <span id="mute">Mute</span>
+        </div>
+        <div class="main-controls-button video">
+            <i class="fas fa-video"></i>
+            <span>Stop Video</span>
+        </div>
+    </div>
+</div>
+</div>
+<div class="main-right">
+<div class="main-header">
+    <h4>Chat</h4>
+</div>
+<div class="main-chat-window">
+    <ul id="messages">
+
+    </ul>
+</div>
+<div class="main-message-container">
+    <form id="chat" action="">
+        <input id="chat-message" type="text" placeholder="Type Message" autocomplete="off">
+    </form>
+</div>
+</div>
+</div>  
